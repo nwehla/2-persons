@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonnageController!s{% endblock %}
+
+{% block body %}
+<div> pseudo: {{pseudo}}</div>
+<div> age: {{age}}</div>
+<div>force:{{carac.force}}</div>
+<div>agilité:{{carac.agi}}</div>
+<div>intelligence:{{carac.intel}}</div>
+<style>
+    ul{
+        border-radius: 15px;
+        border:2px ,solid,red;
+        background-color: yellowgreen;
+
+    }
+    div{
+        background-color: blue;
+        border:2px ,solid;
+    }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Bienvenu dans l'historique! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/symfony/realisations/2-persons/src/Controller/PersonnageController.php'|file_link(0) }}">src/Controller/PersonnageController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/wamp64/www/symfony/realisations/2-persons/templates/personnage/index.html.twig'|file_link(0) }}">templates/personnage/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}
