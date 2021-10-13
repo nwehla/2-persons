@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PersonnageController extends AbstractController
 {
     /**
-     * @Route("/personnage", name="personnage")
+     * @Route("/", name="accueil")
      */
     public function index(): Response
     {
@@ -18,14 +18,14 @@ class PersonnageController extends AbstractController
         ]);
     }
         /**
-         * @route("/persos","name=index_historique")
+         * @route("/persos",name="personnages")
          */
         Public function persos(){
             return $this ->render("/personnage/historique.html.twig",[
                 "pseudo"=>"toto",
                 "age"=> 25,
                 "carac"=> [
-                    "force"=>3,
+                    "force"=>"2",
                     "agi"=>2,
                     "intel"=>3
                     
