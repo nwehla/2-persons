@@ -1,3 +1,20 @@
 body{
-    background-color: fuchsia;
+    background-color:rgb(87, 97, 184);
+    color:ivory;
+    font-size: 10px;
+}
+table{
+     border: 2px,solid,black;
+        text-align: center;
+        
+}
+
+td{
+
+    
+        border-width:3px;
+        border-style:dotted;
+        border-color:black;
+        
+    font-weight: bold;                                                                  
 }

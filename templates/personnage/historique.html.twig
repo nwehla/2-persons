@@ -3,36 +3,41 @@
 {% block title %}Hello PersonnageController!s{% endblock %}
 
 {% block body %}
-<div><img src="{{asset('/immages/personnages/marc.png')}}" alt=""></div>
-<div> pseudo: {{pseudo}}</div>
-<div> age: {{age}}</div>
-<div>nom:{{carac.force}}</div>
-<div>agilité:{{carac.agi}}</div>
-<div>intelligence:{{carac.intel}}</div>
-<style>
-    ul{
-        border-radius: 15px;
-        border:3px ,solid,violet;
-        background-color:ivory;
 
-    }
-    div{
-        background-color:darkcyan;
-        border:2px ,solid;
-        border-radius: 15px;
-        color:ivory
-    }
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Bienvenu dans la page des personnages! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/symfony/realisations/2-persons/src/Controller/PersonnageController.php'|file_link(0) }}">src/Controller/PersonnageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/symfony/realisations/2-persons/templates/personnage/index.html.twig'|file_link(0) }}">templates/personnage/index.html.twig</a></code></li>
-    </ul>
+<div>
+    <table class="table">
+        <tr class="thead-dark">
+            <th>image</th>
+            <th>nom</th>
+            <th>sexe</th>
+            <th>age</th>
+            <th>force</th>
+            <th>abilite</th>
+            <th>intelligence</th>
+        
+        </tr>
+            
+                {% for joueur in tab %}
+                <tr>
+                    <td><img src="{{asset ('images/personnages/' ~ joueur.pseudo ~ '.png')}}" alt="{{joueur.pseudo}}"></td>
+                    <td><a href="{{path('afficherPersonnage',{'pseudo':joueur.pseudo|lower})}}">{{joueur.pseudo}}</a></td>
+                    <td>{{joueur.age}}</td>
+                    <td>
+                        {% if joueur.sexe %}
+                         Homme
+                         {% else %}
+                         Femme
+                         {% endif %}
+                        </td>
+                    <td>{{joueur.carac.force}}</td>
+                    <td>{{joueur.carac.agi}}</td>
+                    <td>{{joueur.carac.intel}}</td>
+                </tr>
+                {% endfor %}
+            
+        
+    </table>
 </div>
+
+
 {% endblock %}
