@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonnageController!s{% endblock %}
+
+{% block body %}
+
+<div>
+    <table class="table">
+        <tr class="thead-dark">
+            <th>image</th>
+            <th>nom</th>
+            <th>sexe</th>
+            <th>age</th>
+            <th>force</th>
+            <th>abilite</th>
+            <th>intelligence</th>
+        
+        </tr>
+            
+                {% for joueur in tab %}
+                <tr>
+                    <td><img src="{{asset ('images/personnages/' ~ joueur.pseudo ~ '.png')}}" alt="{{joueur.pseudo}}"></td>
+                    <td><a href="{{path('afficherPersonnage',{'pseudo':joueur.pseudo|lower})}}">{{joueur.pseudo}}</a></td>
+                    <td>{{joueur.age}}</td>
+                    <td>
+                        {% if joueur.sexe %}
+                         Homme
+                         {% else %}
+                         Femme
+                         {% endif %}
+                        </td>
+                    <td>{{joueur.carac.force}}</td>
+                    <td>{{joueur.carac.agi}}</td>
+                    <td>{{joueur.carac.intel}}</td>
+                </tr>
+                {% endfor %}
+            
+        
+    </table>
+</div>
+
+
+{% endblock %}

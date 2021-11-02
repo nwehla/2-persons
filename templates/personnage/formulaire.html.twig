@@ -1,0 +1,24 @@
+{% extends 'base.html.twig '%}
+{% block body %}
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col ml2 sl2">
+                <h1>Ajout d'un utilisateur</h1>
+                {{form_start(form)}}
+                {{form_label(form.noms)}}
+                {{form_widget(form.noms)}}
+                
+                {{form_label(form.prenoms)}}
+                {{form_widget(form.prenoms)}}
+                
+                <button class="button btn btn-success btn-lg center-block" id="submitBtn">Check it out!</button>
+
+                {{form_end(form)}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock body %}
